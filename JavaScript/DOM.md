@@ -17,7 +17,8 @@ that allows programs and scripts to dynamically access and update the content, s
 - HTML= 선언형 태그로 구성, web page를 구성하는 중첩된 요소들로 설명   
 JavaScript= 계산을 설명하기 위한 알고리즘으로 만들어짐.
 
--
+- DOM을 다룰 때에는 페이지가 완전히 로딩된 후에 코드를 실행해야 함.  
+그렇지 않으면 DOM이 완성되기 전에 코드가 실행될 가능성이 높다.
 
 </br></br></br>  
 #### REFERENCE
