@@ -26,12 +26,16 @@
 1.  var addi = 3 + "4";  
     **addi = 34**   
     
-2. var multi = 3 * "4";
+2. var multi = 3 * "4";  
    **multi = 12**  
   
 3. var mini = "10" - 5;  
    **mini = 5**  
-</br>  
+   
+4. var order = 1 + 2 + "pizza";  
+   **order= "3 pizza"**  
+   (+ 연산자는 왼쪽에서부터 실행됨)  
+</br>  
   
 ### 4. 문자열끼리 비교할 수도 있음.  
   ##### [example]  
