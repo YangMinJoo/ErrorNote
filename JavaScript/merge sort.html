@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+	var arr =  new Array(3, 8, 0, 2, 1, 4);
+	var result_arr = new Array();
+
+	var front_arr = new Array();
+	var back_arr = new Array();
+	
+	var length = arr.length;
+	var scope = 0;
+
+	if(length % 2 == 0)
+	{
+		console.log("arr: " + arr);
+		scope = length/2;
+		divide(scope);
+		sum(scope);
+	}
+
+	else  // if, length % 2 != 0
+	{
+
+	}
+
+	function divide (scope){
+		for(var i=0; i<scope; i++)
+		{
+			front_arr.push(arr[i]);
+		}
+
+		for(var j=scope; j<length; j++)
+		{
+			back_arr.push(arr[j]);
+		}
+
+		console.log("front: " + front_arr);
+		console.log("back: " + back_arr);
+	}
+
+	function sort(arr){
+
+	}
+
+	function sum (scope) {
+		var front_length = front_arr.length;
+		var back_length = back_arr.length;
+
+		var temp = scope;
+		var arr_temp = 0;
+
+		console.log("front_length: " + front_length);
+		console.log("back_length: "  + back_length);
+		console.log("temp: " + temp);
+
+		if(scope % 2 == 0)
+		{
+
+		}
+		else  //if, scope%2 != 0
+		{
+			temp = front_length;
+			temp -= front_length%2;
+			console.log("temp(front_length): " + temp);
+
+			for(var i = 0; i < temp; i++)
+			{
+				if(front_arr[i] > front_arr[i+1])
+				{
+					arr_temp = front_arr[i+1];
+					front_arr[i+1] = front_arr[i];
+					front_arr[i] = arr_temp;
+					
+				}
+			}
+			console.log("sort front1 : " + front_arr);
+
+			if(front_arr[0] > front_arr[2])
+			{
+				arr_temp = front_arr[0];
+				front_arr[0] = front_arr[2];
+				front_arr[2] = arr_temp;
+			}
+			console.log("sort front2 : " + front_arr);
+
+			for(var i= 0; i < temp-1; i++)
+			{
+				if(back_arr[i] > back_arr[i+1])
+				{
+					arr_temp = back_arr[i+1];
+					back_arr[i+1] = back_arr[i];
+					back_arr[i] = arr_temp;
+				}
+			}
+			console.log("sort back1 : " + back_arr);
+
+			if(back_arr[0] > back_arr[2])
+			{
+				arr_temp = back_arr[0];
+				back_arr[0] = back_arr[2];
+				back_arr[2] = arr_temp;
+			}
+			console.log("sort back2 : " + back_arr);
+			// 위에 부분까지 sort함수로 처리하기.
+
+			// 2. 비교, 합치는 과정
+
+			var j = 0;
+			var k = 0;
+			var i = 0;
+			console.log("--------------------");
+			console.log("front_arr: " + front_arr);
+			console.log("back_arr: " + back_arr);
+			console.log("result_arr: " + result_arr);
+			console.log("k: " + k + ", j: " + j);
+
+			while(result_arr.length < 6)
+			{
+				if(j > 2) { j = 2;}
+				if(k > 2) { k = 2;}
+
+				if(front_arr[j] > back_arr[k])
+				{
+					result_arr.push(back_arr[k]);
+
+					console.log("--------------------");
+					console.log("front_arr: " + front_arr);
+					console.log("back_arr: " + back_arr);
+					console.log("result_arr: " + result_arr);
+					console.log("k: " + k + ", j: " + j);
+					k++; 
+				}
+				else if(back_arr[k] > front_arr[j])
+				{
+					result_arr.push(front_arr[j]);
+
+					console.log("--------------------");
+					console.log("front_arr: " + front_arr);
+					console.log("back_arr: " + back_arr);	
+					console.log("result_arr: " + result_arr);
+					console.log("k: " + k + ", j: " + j);
+					j++; 
+				}
+			}
+
+			console.log("--------------------");
+			console.log("final!! result_arr: " + result_arr);
+		}
+	}
+</script>
+</body>
+</html>
