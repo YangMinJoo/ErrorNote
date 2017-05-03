@@ -11,21 +11,18 @@
 	var point = (Math.floor(arr.length/2)); //소숫점 버림, 정수형 반환
 	var rpoint = (Math.floor(arr.length%2));
 
-	var lenght = arr.length;
-	var separate_length = 0;
-
 	separate(point, rpoint); // 분리
 	merge(point); //다시 합병
 
 	function separate(point, rpoint){ //반으로 나눔
 		var i;
 
-		for(i=0; i<point; i++)
+		for(i= 0; i< point; i++)
 		{
 			front_arr.push(arr[i]);
 		}
 
-		for(i=point; i<arr.length; i++)
+		for(i= point; i< arr.length; i++)
 		{
 			back_arr.push(arr[i]);
 		}
@@ -34,9 +31,9 @@
 	function sort(arr, max){ //bubble sort
 		var i, loop, temp_data = 0;
 	
-		for (loop = 0; loop <= max; loop++) 
+		for (loop= 0; loop<= max; loop++) 
 		{
-			for(i = 0; i <= max-loop; i++)
+			for(i= 0; i <= max-loop; i++)
 			{
 				if(arr[i] > arr[i+1])
 				{
