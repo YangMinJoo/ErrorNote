@@ -74,15 +74,16 @@
 				f++; 
 			}
 
-			if(rpoint == 0)
+			if(f == point)
 			{
-				if(f == point) { mergeFinish(b, back_arr, point); }
-				else if( b == point) { mergeFinish(f, front_arr, point); }
+				if(rpoint == 0) { mergeFinish(b, back_arr, point); }
+				else { mergeFinish(b, back_arr, point+rpoint); }
 			}
-			else
+
+			else if(b == point) 
 			{
-				if(f == point) { mergeFinish(b, back_arr, point+rpoint); }
-				else if( b == point) { mergeFinish(f, front_arr, point+rpoint); }
+				if(rpoint == 0) { mergeFinish(f, front_arr, point); }
+				else { mergeFinish(f, front_arr, point+rpoint); }
 			}
 		}
 	}
