@@ -1,0 +1,2 @@
+Click event not working after append method.  
+https://stackoverflow.com/questions/15420558/jquery-click-event-not-working-after-append-method
